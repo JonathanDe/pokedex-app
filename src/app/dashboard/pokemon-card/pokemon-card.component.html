@@ -1,0 +1,8 @@
+
+<div class="pokemon-card-container" *ngIf="(singleInfo$ | async) as data">
+  <span>{{data.name}}</span>
+  <img src="{{data.sprites.front_default}}" alt="Image of {{data.name}}">
+  <pre>{{data.types[0].type.name}}</pre>
+</div>
+<br>
+

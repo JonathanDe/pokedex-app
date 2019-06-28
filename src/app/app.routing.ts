@@ -6,12 +6,13 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginFormComponent } from './login/login-form/login-form.component';
 
 const routes: Routes = [
-  {path: '', component: LoginFormComponent},
+  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'login', component: LoginFormComponent},
+  {path: 'logout', component: LoginFormComponent},
   {path: 'dashboard', component: DashboardHomeComponent, canActivate: [LoginGuard]},
   { path: '**', component: NotFoundComponent },
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

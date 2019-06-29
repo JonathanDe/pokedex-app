@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <div class="detail-card">
   <button (click)="goBack()">
     <i class="fas fa-angle-left"></i> Regresar</button>
@@ -7,9 +6,9 @@
        alt="Image of {{pokemon?.name}}">
   <div class="basic-info">
     <h2>{{pokemon?.name}}</h2>
-    <p>Id: {{pokemon?.id}}</p>
-    <p>Height: {{pokemon?.height}}</p>
-    <p>Weight: {{pokemon?.weight}}</p>
+    <p>Id: <b> {{pokemon?.id}}</b></p>
+    <p>Height: <b> {{pokemon?.height}}</b></p>
+    <p>Weight: <b> {{pokemon?.weight}}</b></p>
   </div>
   <div class="types-info">
     <h4>Types</h4>

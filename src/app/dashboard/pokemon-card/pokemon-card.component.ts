@@ -25,6 +25,5 @@ export class PokemonCardComponent implements OnInit {
   viewDetails(pokemon) {
     this.pokemonService.pokemon = pokemon;
     this.router.navigate(['/pokemon']);
-    console.log(pokemon);
   }
 }

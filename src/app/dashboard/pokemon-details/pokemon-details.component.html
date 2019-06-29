@@ -1,0 +1,26 @@
+<app-header></app-header>
+
+<div class="detail-card">
+  <button (click)="goBack()">
+    <i class="fas fa-angle-left"></i> Regresar</button>
+  <img src="{{pokemon?.sprites.front_default}}"
+       alt="Image of {{pokemon?.name}}">
+  <div class="basic-info">
+    <h2>{{pokemon?.name}}</h2>
+    <p>Id: {{pokemon?.id}}</p>
+    <p>Height: {{pokemon?.height}}</p>
+    <p>Weight: {{pokemon?.weight}}</p>
+  </div>
+  <div class="types-info">
+    <h4>Types</h4>
+    <ul>
+      <li *ngFor="let type of pokemon?.types">{{type.type.name}}</li>
+    </ul>
+  </div>
+  <div class="moves-info">
+    <h4>Moves</h4>
+    <ul>
+      <li *ngFor="let move of pokemon?.moves">{{move.move.name}}</li>
+    </ul>
+  </div>
+</div>

@@ -10,24 +10,12 @@ export class LoginService {
   constructor() {}
 
   registerUser(user: UserInfo) {
-    // let userDataBase = JSON.parse(localStorage.getItem(this.fakeLocalStorageKey)) || [];
-    // userDataBase.push(user);
-    // localStorage.setItem(this.fakeLocalStorageKey, JSON.stringify(userDataBase));
 
     let userDataBase = JSON.parse(localStorage.getItem(this.fakeLocalStorageKey)) || [];
 
-    // nuevo
+    userDataBase.push(user);
+    localStorage.setItem(this.fakeLocalStorageKey, JSON.stringify(userDataBase));
 
-    let userRegistered = userDataBase.some((existingUser) => {
-      return user.email === existingUser.email;
-    });
-
-    if (!userRegistered) {
-      userDataBase.push(user);
-      localStorage.setItem(this.fakeLocalStorageKey, JSON.stringify(userDataBase));
-    }
-
-    return userRegistered;
   };
 
   loginUser(user: UserInfo) {
@@ -55,6 +43,14 @@ export class LoginService {
     localStorage.setItem('hasAccess', 'false');
   }
 
+  registered(user: UserInfo){
+    let userDataBase = JSON.parse(localStorage.getItem(this.fakeLocalStorageKey)) || [];
 
+    let userRegistered = userDataBase.some((existingUser) => {
+      return user.email === existingUser.email;
+    });
+
+    return userRegistered;
+  }
 
 }

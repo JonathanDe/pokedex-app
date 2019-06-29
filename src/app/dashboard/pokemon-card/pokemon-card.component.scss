@@ -1,0 +1,85 @@
+:host{
+  width: 20%;
+}
+.pokemon-card-container{
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(60,102,196,0.15);
+  background: #fff;
+  margin: 0.5em;
+  transition: all 0.15s ease-in;
+
+  &:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 5px rgba(60,102,196,0.15),
+      0 6px 5px rgba(0,0,0,0.15);
+  }
+
+  span{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+  }
+  .card-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1em;
+
+    ul {
+      li{
+        list-style: none;
+        display: inline-block;
+        margin: 0 5px;
+      }
+    }
+  }
+  .card-action{
+    margin-top: 1em;
+
+    button{
+      background: #eee;
+      padding: 1em 0.51em;
+      text-align: center;
+      width: 100%;
+      font-family: 'Roboto', sans-serif;
+      border: none;
+      cursor: pointer;
+      color: #3c66c4;
+      transition: all 0.15s ease-in;
+
+
+      &:hover{
+        background: #3c66c4;
+        color: #fff;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 529px) {
+  :host {
+    width: 80%;
+  }
+}
+
+@media (min-width: 530px) and (max-width: 900px) {
+  :host {
+    width: 40%;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  :host {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1800px) {
+  :host {
+    width: 20%;
+  }
+}
+
+

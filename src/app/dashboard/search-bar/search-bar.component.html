@@ -1,3 +1,6 @@
-<p>
-  search-bar works!
-</p>
+<div class="search-box-container">
+  <form [formGroup]="searchForm">
+    <input type="text" placeholder="Busca a tu pokemon" formControlName="searchValue">
+    <button type="submit" (click)="onValueChange()">Buscar</button>
+  </form>
+</div>

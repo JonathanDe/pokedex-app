@@ -81,10 +81,14 @@
           label{
             padding-bottom: 0.3em;
             color: rgba(92,100,119,0.71);
+            span.text-red {
+              color: red;
+            }
           }
           input{
-            padding: 1em 0.7em;
+            padding: 0.5em 0.7em;
             font-size: 14px;
+            border-radius: 10px;
             border: 1px solid rgba(92,100,119,0.4);
 
             &:focus{
@@ -137,4 +141,14 @@
     }
   }
 
+}
+
+
+@media (min-width: 300px) and (max-width: 480px) {
+  .login-form-container{
+
+    .login-card-container{
+      width: 80%;
+    }
+  }
 }

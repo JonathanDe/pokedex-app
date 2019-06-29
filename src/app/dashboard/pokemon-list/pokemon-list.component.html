@@ -2,4 +2,5 @@
   <app-pokemon-card *ngFor="let pokemon of pokemonResults"
                     [pokemonInfo]="pokemon">
   </app-pokemon-card>
+  <span *ngIf="pokemonResults.length === 0">No se encontraron resultados</span>
 </div>

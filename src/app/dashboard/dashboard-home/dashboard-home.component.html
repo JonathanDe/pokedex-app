@@ -1,3 +1,3 @@
 <app-header></app-header>
-<app-search-bar></app-search-bar>
-<app-pokemon-list [pokemonResults]="pokemonResults"></app-pokemon-list>
+<app-search-bar (valueChange)="searchChaged($event)"></app-search-bar>
+<app-pokemon-list [pokemonResults]="pokemonResults | search : searchValue"></app-pokemon-list>

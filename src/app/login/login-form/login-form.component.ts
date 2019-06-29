@@ -57,27 +57,21 @@ export class LoginFormComponent implements OnInit {
 
     if (this.loginForm.valid) {
       this.showError = false;
-      if (this.loginForm.controls['password'].value !=  this.loginForm.controls['passwordConfirm'].value) {
+
+      if(this.loginService.registered(this.loginForm.value)) {
         this.showError = true;
-        this.errorText = 'Las contraseñas no coinciden';
+        this.errorText = 'Ya existe un usuario con el email ingresado';
       } else {
         this.showError = false;
-
-        if (this.loginService.loginUser(this.loginForm.value)) {
+        if (this.loginForm.controls['password'].value != this.loginForm.controls['passwordConfirm'].value) {
           this.showError = true;
-          this.errorText = 'El correo ya está registrado';
+          this.errorText = 'Las contraseñas no coinciden';
         } else {
-          this.showError = false,
           this.loginService.registerUser(this.loginForm.value);
-          if (this.loginService.loginUser(this.loginForm.value)) {
-
-            this.router.navigate(['/dashboard']);
-          }
-          console.log('se puede registrar');
-
+          this.loginService.loginUser(this.loginForm.value);
+          this.router.navigate(['/dashboard']);
         }
       }
-
     } else {
       this.showError = true;
       this.errorText = 'Por favor llena los campos requeridos';

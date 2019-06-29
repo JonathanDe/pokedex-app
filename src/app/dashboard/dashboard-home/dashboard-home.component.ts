@@ -9,13 +9,18 @@ import { DashboardService } from '../dashboard.service';
 export class DashboardHomeComponent implements OnInit {
 
   pokemonResults = [];
+  searchValue = '';
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.dashboardService.getAllPokemons('0','5').subscribe((data)=>{
+    this.dashboardService.getAllPokemons('0','50').subscribe((data)=>{
       this.pokemonResults = data.results;
     });
+  }
+
+  searchChaged(searchValue) {
+    this.searchValue = searchValue;
   }
 
 }

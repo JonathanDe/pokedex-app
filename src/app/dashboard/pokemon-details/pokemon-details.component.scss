@@ -1,0 +1,62 @@
+:host{
+  background: url('../../../assets/images/bg-2.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: block;
+  padding-bottom: 2em;
+}
+
+.detail-card{
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 2em;
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0 4px 5px rgba(60,102,196,0.15);
+  background: #fff;
+  padding: 2em;
+
+  img{
+    transform: scale(1.5);
+    display: block;
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+
+  .basic-info, .moves-info, .types-info{
+    margin-bottom: 1.5em;
+  }
+
+  .basic-info{
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1.5em;
+
+    h2{
+      margin: 0.5em 0;
+      color: #3c66c4;
+    }
+  }
+
+  ul{
+    margin-left: 2em;
+  }
+
+  button{
+    color: #3c66c4;
+    background: #fff;
+    border: none;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 529px) {
+  .detail-card {
+    width: 80%;
+  }
+}

@@ -1,0 +1,42 @@
+:host{
+  display: block;
+  height: 60px;
+}
+
+.header-container{
+  font-family: 'Lato', sans-serif;
+  header{
+    display: flex;
+    max-width: 100%;
+    justify-content: space-between;
+    background: #fff;
+    align-items: center;
+    height: 60px;
+    padding: 0 2em;
+    box-shadow: 2px 0px 5px rgba(0,0,0,.1);
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+
+    .logo-container{
+      span{
+        color: #3c66c4;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+
+    .menu-container{
+      button{
+        box-shadow: none;
+        background: #3c66c4;
+        color: #fff;
+        border: none;
+        font-size: 17px;
+        padding: 0.5em 1em;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
